@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Global IT — Business IT Support, Cloud &amp; Security</title>
 <meta name="description" content="Global IT Technology — Australian family-owned IT company based in Melbourne. Consulting, Procurement, Managed Services, Cloud, Maintenance and Security Solutions." />
-<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="icon" type="image/png" href="assets/logo-dark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -112,12 +112,12 @@
   }
   .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;}
   .brand{display:flex;align-items:center;gap:14px;}
-  .brand-img{
-    height:38px;width:auto;display:block;
-    background:var(--paper);padding:8px 14px;border-radius:8px;border:1px solid var(--line);
-    transition:background .3s ease;
-  }
-  [data-theme="dark"] .brand-img,[data-theme="dark"] .foot-logo{background:#F7F4EA;border-color:transparent;}
+  .brand-logo{position:relative;height:46px;}
+  .brand-logo img{height:46px;width:auto;display:block;transition:opacity .3s ease;}
+  .brand-logo .logo-light{display:block;}
+  .brand-logo .logo-dark{display:none;}
+  [data-theme="dark"] .brand-logo .logo-light{display:none;}
+  [data-theme="dark"] .brand-logo .logo-dark{display:block;}
   .brand small{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--text-faint);font-weight:600;}
   .nav-links{display:flex;gap:34px;list-style:none;align-items:center;}
   .nav-links a{font-size:.86rem;font-weight:600;letter-spacing:.02em;position:relative;padding:4px 0;}
@@ -363,10 +363,12 @@
   .foot-top li a{font-size:.95rem;color:var(--text);transition:color .2s;}
   .foot-top li a:hover{color:var(--clay);}
   .foot-top p{font-size:.95rem;color:var(--text-soft);max-width:32ch;margin-top:14px;}
-  .foot-logo{
-    height:40px;width:auto;display:block;
-    background:#F7F4EA;padding:9px 14px;border-radius:8px;
-  }
+  .foot-logo{position:relative;height:46px;margin-bottom:6px;}
+  .foot-logo img{height:46px;width:auto;display:block;}
+  .foot-logo .logo-light{display:block;}
+  .foot-logo .logo-dark{display:none;}
+  [data-theme="dark"] .foot-logo .logo-light{display:none;}
+  [data-theme="dark"] .foot-logo .logo-dark{display:block;}
   .wordmark{
     font-family:var(--display);font-weight:700;letter-spacing:-.045em;
     font-size:clamp(3.4rem,13.5vw,12rem);line-height:.9;color:var(--ink);
@@ -413,7 +415,7 @@
     .nav-links.open{display:flex;}
     .nav-links a{display:block;padding:14px 0;border-bottom:1px solid var(--line);width:100%;}
     .nav .btn{display:none;}
-    .brand-img{height:34px;}
+    .brand-logo,.brand-logo img{height:36px;}
     .stats{grid-template-columns:1fr 1fr;}
     .stats div:nth-child(3){border-left:none;}
     .stats div:nth-child(3),.stats div:nth-child(4){border-top:1px solid var(--line);}
@@ -441,7 +443,10 @@
 <header>
   <div class="wrap nav">
     <a href="#top" class="brand" aria-label="Global IT home">
-      <img class="brand-img" src="assets/logo.png" alt="Global IT Technology" width="540" height="123" />
+      <span class="brand-logo">
+        <img class="logo-light" src="assets/logo-dark.png" alt="Global IT Technology" width="719" height="169" />
+        <img class="logo-dark" src="assets/logo.png" alt="" width="540" height="123" aria-hidden="true" />
+      </span>
       <small>Melbourne</small>
     </a>
     <nav>
@@ -707,7 +712,10 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <img class="foot-logo" src="assets/logo.png" alt="Global IT Technology" width="540" height="123" loading="lazy" />
+        <div class="foot-logo">
+          <img class="logo-light" src="assets/logo-dark.png" alt="Global IT Technology" width="719" height="169" loading="lazy" />
+          <img class="logo-dark" src="assets/logo.png" alt="" width="540" height="123" loading="lazy" aria-hidden="true" />
+        </div>
         <p>Expert IT consultation, managed services, cloud and security for Australian businesses — built on trust, not upsells.</p>
       </div>
       <div>
